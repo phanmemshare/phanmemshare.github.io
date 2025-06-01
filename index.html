@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phần Mềm Share</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       box-sizing: border-box;
@@ -13,25 +14,54 @@
     }
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom right, #e0f7ff, #f2faff);
+      background: url('https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
       line-height: 1.6;
     }
     header {
-      background-color: #007acc;
+      background-color: rgba(0, 122, 204, 0.95);
       color: white;
       padding: 30px 20px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      position: relative;
     }
     header h1 {
       font-size: 2.5em;
       margin-bottom: 10px;
     }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffdd57;
+    }
+    .search-bar {
+      margin-top: 20px;
+    }
+    .search-bar input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1em;
+    }
     .section {
       padding: 60px 20px;
       max-width: 1100px;
       margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      margin-top: 30px;
     }
     .section h2 {
       border-left: 6px solid #007acc;
@@ -51,10 +81,19 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       padding: 25px;
       transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    .card img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 15px;
     }
     .card h3 {
       font-size: 1.4em;
@@ -80,7 +119,7 @@
       background-color: #005fa3;
     }
     footer {
-      background: #007acc;
+      background: rgba(0, 122, 204, 0.9);
       color: white;
       text-align: center;
       padding: 25px 10px;
@@ -100,18 +139,27 @@
 <body>
   <header>
     <h1>Kho Chia Sẻ Phần Mềm</h1>
-    <p>Phục vụ miễn phí cho cộng đồng học tập và công nghệ</p>
+    <nav>
+      <a href="#hoc-tap"><i class="fas fa-book"></i> Học Tập</a>
+      <a href="#giai-tri"><i class="fas fa-gamepad"></i> Giải Trí</a>
+      <a href="#he-thong"><i class="fas fa-tools"></i> Hệ Thống</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Tìm phần mềm...">
+    </div>
   </header>
 
-  <div class="section">
+  <div class="section" id="hoc-tap">
     <h2>Học Tập</h2>
     <div class="software-list">
       <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Foxit_logo.svg/1200px-Foxit_logo.svg.png" alt="Foxit Reader">
         <h3>Foxit Reader</h3>
         <p>Phần mềm đọc file PDF nhẹ và nhanh.</p>
         <a href="https://drive.google.com/your-foxit-link" class="btn-download">Tải về</a>
       </div>
       <div class="card">
+        <img src="https://notepad-plus-plus.org/images/logo.svg" alt="Notepad++">
         <h3>Notepad++</h3>
         <p>Soạn thảo văn bản, lập trình nhẹ nhàng.</p>
         <a href="https://drive.google.com/your-notepad-link" class="btn-download">Tải về</a>
@@ -119,15 +167,17 @@
     </div>
   </div>
 
-  <div class="section">
+  <div class="section" id="giai-tri">
     <h2>Giải Trí</h2>
     <div class="software-list">
       <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/VLC_media_player_icon.svg" alt="VLC">
         <h3>VLC Media Player</h3>
         <p>Xem video, nghe nhạc, hỗ trợ nhiều định dạng.</p>
         <a href="https://drive.google.com/your-vlc-link" class="btn-download">Tải về</a>
       </div>
       <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/KMPlayer_Logo.png/220px-KMPlayer_Logo.png" alt="KMPlayer">
         <h3>KMPlayer</h3>
         <p>Trình phát đa phương tiện đa năng.</p>
         <a href="https://drive.google.com/your-kmp-link" class="btn-download">Tải về</a>
@@ -135,15 +185,17 @@
     </div>
   </div>
 
-  <div class="section">
+  <div class="section" id="he-thong">
     <h2>Hệ Thống</h2>
     <div class="software-list">
       <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Ccleaner_logo.png" alt="CCleaner">
         <h3>CCleaner</h3>
         <p>Dọn rác, tăng tốc hệ thống Windows.</p>
         <a href="https://drive.google.com/your-ccleaner-link" class="btn-download">Tải về</a>
       </div>
       <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/6a/WinRAR_Logo.png" alt="WinRAR">
         <h3>WinRAR</h3>
         <p>Giải nén file RAR, ZIP và nhiều định dạng khác.</p>
         <a href="https://drive.google.com/your-winrar-link" class="btn-download">Tải về</a>
